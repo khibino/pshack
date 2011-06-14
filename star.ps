@@ -1,0 +1,16 @@
+    /starside
+      { 72 0 lineto      %add line to path
+        currentpoint translate           %move origin
+%       −144 rotate } def                %rotate coord. sys.
+        -144 rotate } def                %rotate coord. sys.
+     /star               %stack: x y
+      { moveto
+        currentpoint translate
+        4 {starside} repeat
+        closepath
+        gsave
+         .5 setgray fill
+        grestore
+        stroke } def
+
+200 200 star
